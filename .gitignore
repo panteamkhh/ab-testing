@@ -1,0 +1,28 @@
+# Data (downloaded / large)
+data/raw/*
+!data/raw/.gitkeep
+
+# Generated outputs
+# tables are regenerated on each run; figures are kept so the README renders
+reports/tables/*
+!reports/tables/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
