@@ -1,0 +1,28 @@
+project:
+  name: ab-testing
+  seed: 42
+
+data:
+  source: "Mobile Games A/B Testing — Cookie Cats (Kaggle, via GitHub mirror)"
+  url: "https://raw.githubusercontent.com/ryanschaub/Mobile-Games-A-B-Testing-with-Cookie-Cats/master/cookie_cats.csv"
+  raw_file: "data/raw/cookie_cats.csv"
+
+experiment:
+  control: "gate_30"
+  treatment: "gate_40"
+  primary_metric: "retention_7"
+  secondary_metrics: ["retention_1", "sum_gamerounds"]
+  alpha: 0.05
+  srm_alpha: 0.001
+  power: 0.80
+  mde_relative: 0.02        # 2% relative MDE used for the sample-size calculation
+  bootstrap_iterations: 10000
+  bayes_samples: 200000
+  prior_alpha: 1.0
+  prior_beta: 1.0
+  outlier_threshold: 49000  # the famous single-user outlier in this dataset
+
+paths:
+  figures: "reports/figures"
+  tables: "reports/tables"
+  report: "reports/REPORT.md"
